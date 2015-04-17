@@ -19,25 +19,19 @@ jquery.backtopbutton.js (c) 2015 http://www.internet-fabrig.de
             'scrollTopDuration': 700
         }, options);
 
-        var offset = settings['offset'];
-        var speed = settings['speed'];
-        var positionBottom = settings['positionBottom'];
-        var positionRight = settings['positionRight'];
-        var scrollTopDuration = settings['scrollTopDuration'];
-
         // css button position
         topBtn.css({
-            'right': positionRight,
-            'bottom': positionBottom
+            'right': settings.positionRight,
+            'bottom': settings.positionBottom
         });
 
         // button fadeIn and fadeOut
         $(document).scroll(function () {
             var windowPos = $(window).scrollTop();
-            if (windowPos >= offset) {
-                topBtn.fadeIn(speed);
+            if (windowPos >= settings.offset) {
+                topBtn.fadeIn(settings.speed);
             } else {
-                topBtn.fadeOut(speed);
+                topBtn.fadeOut(settings.speed);
             }
         });
 
@@ -46,7 +40,7 @@ jquery.backtopbutton.js (c) 2015 http://www.internet-fabrig.de
             event.preventDefault();
             $('body,html').animate({
                     scrollTop: 0
-                }, scrollTopDuration
+                }, settings.scrollTopDuration
             );
         });
     }
