@@ -1,4 +1,4 @@
-# jquery-back-to-top-button
+jquery-back-to-top-button
 =========
 
 ### setup
@@ -9,7 +9,7 @@ $(document).ready( function() {
 });
 ```
 
-** example with options**
+**example with options**
 
 ```js
 $(document).ready( function() {
